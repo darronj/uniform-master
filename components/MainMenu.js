@@ -2,7 +2,7 @@ import { Text } from 'grommet';
 import Link from 'next/link';
 import React from 'react';
 
-export default function MainMenu() {
+export default function MainMenu({ children }) {
   return (
     <>
       <Link href="/">
@@ -11,6 +11,12 @@ export default function MainMenu() {
       <Link href="/tabs">
         <Text>Tabs</Text>
       </Link>
+      {children && (
+        <>
+          <hr />
+          {children}
+        </>
+      )}
     </>
   );
 }

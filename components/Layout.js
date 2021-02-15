@@ -13,7 +13,9 @@ import AppBar from './AppBar';
 import MainMenu from './MainMenu';
 import THEME from './Theme';
 
-export default function Layout({ children }) {
+const defaultSidebar = <MainMenu />;
+
+export default function Layout({ sidebar = defaultSidebar, children }) {
   const [showSidebar, setShowSidebar] = useState(false);
   return (
     <Grommet theme={THEME} full>
@@ -45,7 +47,7 @@ export default function Layout({ children }) {
                     align="center"
                     justify="center"
                   >
-                    <MainMenu />
+                    {sidebar}
                   </Box>
                 </Collapsible>
               ) : (
@@ -68,7 +70,7 @@ export default function Layout({ children }) {
                     align="center"
                     justify="center"
                   >
-                    <MainMenu />
+                    {sidebar}
                   </Box>
                 </Layer>
               )}

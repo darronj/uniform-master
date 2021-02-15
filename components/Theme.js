@@ -5,7 +5,7 @@ const THEME = {
     },
     font: {
       family: 'Inter',
-      size: '18px',
+      size: '14px',
       height: '20px'
     }
   }
